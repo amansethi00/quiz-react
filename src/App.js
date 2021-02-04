@@ -164,9 +164,9 @@ function App() {
           <div className="answer-container">
           {results[questionNumber]["options"].map((value, index) => {
           return (
-            <li key={index} id="output" className="options" value={value} onClick={() => handleAnswerOptionClick(value)}>
+            <button key={index} id="output" className="options" value={value} onClick={() => handleAnswerOptionClick(value)}>
                {value}
-            </li>
+            </button>
           );
         })}
           </div>
