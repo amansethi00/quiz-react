@@ -9,8 +9,7 @@ html {
   height: 100%;
   width: 100%;
 }
-:root {
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -47,6 +46,8 @@ html {
 }
 .question-container {
   max-width: 15rem;
+}
+.question {
   align-self: center;
 }
 .answer-container {
@@ -78,4 +79,34 @@ html {
 }
 li {
   list-style: none;
+}
+.controls {
+  margin: auto;
+  max-width: 20rem;
+  height: 2rem;
+  margin-top: 1rem;
+  /* background-color: #164e63; */
+}
+.next {
+  height: 2rem;
+}
+.next:hover {
+  color: white;
+  height: 2.5rem;
+}
+.options:hover {
+  font-weight: bold;
+  background-color: #155e75;
+}
+.options::after {
+  background-color: #0891b2;
+}
+a:visited {
+  background-color: #0891b2;
+}
+a::selection {
+  background-color: #0891b2;
+}
+.options::selection {
+  background-color: #0891b2;
 }

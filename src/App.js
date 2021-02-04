@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from "react";
+
 var results= [
   {
       "category": "Science: Computers",
@@ -135,25 +136,48 @@ var results= [
 ];
 function App() {
   const [questionNumber,setQuestionNumber]=useState(0);
+  const [showScore,setShowScore] = useState(false);
+  const [score,setScore] = useState(0);
+  function handleAnswerOptionClick(value){
+    if(value === results[questionNumber].correct_answer){
+      setScore(score+1);
+    }
+    if(questionNumber < (results.length-1)){
+      setQuestionNumber(questionNumber+1);
+    }
+    else{
+      setShowScore(true);
+    }
+    
+  }
   return (
     <div className="App">
       <header className="head">G.K Quiz</header>
       <div className="container">
-          <div className="question-container">{results[questionNumber]["question"]}</div>
+        {showScore? (<div className="showScore">You scored {score} out of {results.length}</div>):(
+        
+        <>
+           <div className="question-container">
+            Question {questionNumber+1} of {results.length}
+            <div className="question">{results[questionNumber]["question"]}</div>
+            </div>
           <div className="answer-container">
           {results[questionNumber]["options"].map((value, index) => {
           return (
-            <li key={index} id="output" className="options">
+            <li key={index} id="output" className="options" value={value} onClick={() => handleAnswerOptionClick(value)}>
                {value}
             </li>
           );
         })}
           </div>
+        </>
+        )}
+         
          
       </div>
-  
-    </div>
-  );
+     </div>
+            
+	);
 }
 
 export default App;
