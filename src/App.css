@@ -101,12 +101,7 @@ li {
 .options::after {
   background-color: #0891b2;
 }
-a:visited {
-  background-color: #0891b2;
-}
-a::selection {
-  background-color: #0891b2;
-}
+
 .options::selection {
   background-color: #0891b2;
 }
