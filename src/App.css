@@ -94,7 +94,9 @@ li {
   color: white;
   height: 2.5rem;
 }
-.options:hover {
-  font-weight: bold;
-  background-color: #155e75;
+@media (min-width: 790px) {
+  .options:hover {
+    font-weight: bold;
+    background-color: #155e75;
+  }
 }
