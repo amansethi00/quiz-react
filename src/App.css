@@ -98,10 +98,3 @@ li {
   font-weight: bold;
   background-color: #155e75;
 }
-.options::after {
-  background-color: #0891b2;
-}
-
-.options::selection {
-  background-color: #0891b2;
-}
